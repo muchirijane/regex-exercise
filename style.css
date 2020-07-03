@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+body{ 
+    text-align: center;
+    font-size: 18px;
+    font-family: arial;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textarea{
+    margin-top: 2rem;
+    font-size: 18px;
+    text-align: unset;
+}
+
+button {
+    background: burlywood;
+    font-size: 18px;
+    padding: 14px 38px;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.result-text{
+    padding-top: 2rem;
+    font-size: 18px;
+}
