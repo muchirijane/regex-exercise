@@ -39,12 +39,12 @@ const resultText = document.querySelector('.result-text');
 
 function regexPattern (){
     //janetracy@SpeechGrammarList.com
-    const regex = /(\(?\d{3}\)?)[-.](\d{3})[\-\.](\d{4})/g;
+    const regex = /(\w+)/g;
     const str = textarea.value;
     console.log(str);
 
 
-    const results = regex.exec(str);
+    const results = str.split(regex);
      console.log(results);
      
     results.forEach(result =>{
