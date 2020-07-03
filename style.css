@@ -26,6 +26,9 @@ body{
     font-size: 18px;
     text-align: unset;
 }
+.text-info{
+    margin: 1rem 0;
+}
 
 button {
     background: burlywood;
