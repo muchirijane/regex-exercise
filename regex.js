@@ -39,21 +39,20 @@ const resultText = document.querySelector('.result-text');
 
 function regexPattern (){
     //janetracy@SpeechGrammarList.com
-    const regex = /\b\w+\b/g;
+    const regex = /(\d{3})-(\d{4})/g;
     const str = textarea.value;
 
 
     const results = str.replace(regex, replace);
-    console.log(results);
+    //console.log(results);
     resultText.innerHTML = results;
 
 
-    function replace (match) {
-        if(match.length == 4){
-            return match.toUpperCase();
-        }else{
-            return match;
-        }
+    function replace (match,group1,group2) {
+        console.log(match, group1, group2);
+        console.log(arguments)
+        return match, group1, group2;
+
     }
   
      
