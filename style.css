@@ -44,4 +44,5 @@ button {
 .result-text{
     padding-top: 2rem;
     font-size: 18px;
+    max-width: 500px;
 }

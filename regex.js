@@ -39,26 +39,28 @@ const resultText = document.querySelector('.result-text');
 
 function regexPattern (){
     //janetracy@SpeechGrammarList.com
-    const regex = /(\w+)/g;
+    const regex = /([aeiou])/g;
     const str = textarea.value;
     console.log(str);
 
 
-    const results = str.split(regex);
+    const results = str.replace(regex, '$1$1');
      console.log(results);
+     resultText.innerHTML = results;
+  
      
-    results.forEach(result =>{
-        if(result != null){
-            let html = '';
-            html += `
-                <li>${result}</li>
-            `;   
+    // results.forEach(result =>{
+    //     if(result != null){
+    //         let html = '';
+    //         html += `
+    //             <li>${result}</li>
+    //         `;   
 
-            resultText.innerHTML += html;
-        }
+    //         resultText.innerHTML += html;
+    //     }
         
         
-    })
+    // })
 
 
 };
