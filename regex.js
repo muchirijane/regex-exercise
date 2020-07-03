@@ -39,14 +39,22 @@ const resultText = document.querySelector('.result-text');
 
 function regexPattern (){
     //janetracy@SpeechGrammarList.com
-    const regex = /([aeiou])/g;
+    const regex = /\b\w+\b/g;
     const str = textarea.value;
-    console.log(str);
 
 
-    const results = str.replace(regex, '$1$1');
-     console.log(results);
-     resultText.innerHTML = results;
+    const results = str.replace(regex, replace);
+    console.log(results);
+    resultText.innerHTML = results;
+
+
+    function replace (match) {
+        if(match.length == 4){
+            return match.toUpperCase();
+        }else{
+            return match;
+        }
+    }
   
      
     // results.forEach(result =>{
