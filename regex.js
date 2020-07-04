@@ -38,36 +38,46 @@ const textarea = document.querySelector('textarea');
 const resultText = document.querySelector('.result-text');
 
 function regexPattern (){
-    //janetracy@SpeechGrammarList.com
-    const regex = /(\d{3})-(\d{4})/g;
+    
+    const regex = /(\W+)/g;
     const str = textarea.value;
 
 
-    const results = str.replace(regex, replace);
-    //console.log(results);
-    resultText.innerHTML = results;
+    const results = str.split(regex);
+    console.log(results);
+    //resultText.innerHTML = results;
 
 
-    function replace (match,group1,group2) {
-        console.log(match, group1, group2);
-        console.log(arguments)
-        return match, group1, group2;
 
-    }
+    
   
      
-    // results.forEach(result =>{
-    //     if(result != null){
-    //         let html = '';
-    //         html += `
-    //             <li>${result}</li>
-    //         `;   
+    results.forEach(result =>{
+        if(result != null){
+            // let html = '';
+            // html += `
+            //     <span>${result}</span>
+            // `; 
+            
+            // resultText.innerHTML += html;
+            const span = document.createElement('span');
+            span.innerHTML = result;
+            resultText.appendChild(span);
+            //span.style.backgroundColor = 'bisque';
 
-    //         resultText.innerHTML += html;
-    //     }
+
+
+            span.addEventListener ('mouseover', () => {
+                const randomColour = Math.floor(Math.random()* 255);
+                const randomColour1 = Math.floor(Math.random()* 255);
+                const randomColour2 = Math.floor(Math.random()* 255);
+                span.style.backgroundColor = `rgba(${randomColour}, ${randomColour1}, ${randomColour2})`; 
+                span.textContent = 'Yesss!'               
+            })
+
+        }        
         
-        
-    // })
+    })
 
 
 };
